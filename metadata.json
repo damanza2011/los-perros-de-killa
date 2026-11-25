@@ -1,0 +1,6 @@
+{
+  "name": "Los Perros de Cordero Killa",
+  "description": "100% Cordero Gourmet en Barranquilla. Alta gastronomía urbana de cordero en los principales centros comerciales y plazas icónicas de La Arenosa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

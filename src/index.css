@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  /* Paleta de Colores Sofisticada: La Cordería · Edición Killa Barranquilla */
+  --color-corderia-obsidian: #0D0807;
+  --color-corderia-surface: #150B0A;
+  --color-corderia-elevated: #1E0F0E;
+  --color-corderia-burgundy: #3D1217;
+  --color-corderia-crimson: #5E1921;
+  --color-corderia-gold: #D4AF37;
+  --color-corderia-gold-light: #F3C663;
+  --color-corderia-ivory: #FBF7F0;
+  --color-corderia-sand: #E5DEC9;
+  --color-corderia-muted: #BFB3A4;
+
+  /* Selección Tipográfica: Serif de Lujo + Sans-Serif Geométrica + Monospace Tabular */
+  --font-serif-luxury: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-sans-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono-data: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+  :root {
+    --font-display: var(--font-serif-luxury);
+    --font-sans: var(--font-sans-body);
+    --font-mono: var(--font-mono-data);
+  }
+
+  body {
+    font-family: var(--font-sans-body);
+    background-color: var(--color-corderia-obsidian);
+    color: var(--color-corderia-ivory);
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-serif-luxury);
+    letter-spacing: 0.02em;
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono-data);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Estructura de Layout Responsiva y Utilidades Arquitectónicas */
+@layer components {
+  .corderia-container {
+    width: 100%;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .corderia-container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  .corderia-surface-card {
+    background-color: var(--color-corderia-surface);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 0.75rem;
+    transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .corderia-surface-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(212, 175, 55, 0.55);
+  }
+
+  .corderia-gold-cta {
+    background: linear-gradient(90deg, #D4AF37 0%, #F3C663 50%, #D4AF37 100%);
+    color: #0D0807;
+    font-weight: 600;
+    transition: filter 150ms ease, transform 150ms ease;
+  }
+
+  .corderia-gold-cta:hover {
+    filter: brightness(1.08);
+  }
+}
+
+/* Custom subtle gold metallic shimmer and luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0807;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2C1917;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4A1920;
+}
